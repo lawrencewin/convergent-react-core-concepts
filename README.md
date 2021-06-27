@@ -6,10 +6,10 @@ This is a repo developed by officers of Texas Convergent that is filled with Rea
 
 While the repo is mainly used to show code references, you can also see the examples running in real time. To do so, you will need the following installed on your computer:
 
-* Latest version of Node JS
+* Latest version of [Node JS](https://nodejs.org/en/download/)
 * A JS package manager
-    * NPM
-    * Yarn
+    * [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+    * [Yarn (My recommendation)](https://classic.yarnpkg.com/en/docs/install/#windows-stable)
 
 Once you have both dependencies, clone this repo to your local machine. `cd` into the repository folder. If you've installed NPM, then run `npm install`. If you've installed Yarn, run `yarn install`.
 

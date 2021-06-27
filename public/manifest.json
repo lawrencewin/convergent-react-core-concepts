@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Convergent Examples",
+  "name": "Convergent React Core Examples",
   "icons": [
     {
       "src": "favicon.ico",
