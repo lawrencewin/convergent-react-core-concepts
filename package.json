@@ -12,10 +12,12 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "prestart": "npm run-script clean",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run-script clean && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "clean": "prettier --write src"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +36,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "^2.3.2"
   }
 }
