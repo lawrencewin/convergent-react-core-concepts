@@ -252,7 +252,8 @@ function OnKeyPressDemo() {
     const [textPress, setTextPress] = useState("")
 
     const handleKeys = (e, type) => {
-        let txt = "", fn = null
+        let txt = "",
+            fn = null
         switch (type) {
             case "press":
                 txt = `Pressed ${e.key}`
