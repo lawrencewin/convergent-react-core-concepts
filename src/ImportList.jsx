@@ -39,12 +39,7 @@ export default function ImportList({ onItemClick }) {
                                                 textDecoration: "underline",
                                                 cursor: "pointer",
                                             }}
-                                            onClick={() =>
-                                                handleItemClick(
-                                                    dirname,
-                                                    moduleName
-                                                )
-                                            }
+                                            onClick={() => handleItemClick(dirname, moduleName)}
                                         >
                                             {moduleName}
                                         </button>
