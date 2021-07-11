@@ -8,7 +8,7 @@ const fileImports = {
     "4_Props": ["Props"],
     "5_Hooks": ["UseState", "UseEffect"],
     "6_ListeningToEvents": ["AddListeners"],
-    "7_Styling": ["Flexbox", "Margins", "Padding", "StyledComponents"],
+    "7_Styling": ["Flexbox", "Margins", "Padding"],
 }
 
 export default fileImports
