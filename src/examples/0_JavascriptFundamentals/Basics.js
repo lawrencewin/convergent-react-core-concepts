@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * - The Basics of Javascript (JS) -
  *
