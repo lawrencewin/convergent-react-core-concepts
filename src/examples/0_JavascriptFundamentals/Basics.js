@@ -1,21 +1,21 @@
 /**
- * - The Basics of Javascript (JS) - 
- * 
- * JS was first invented as a web language to make HTML and CSS dynamic and cool. Since then, it has become 
+ * - The Basics of Javascript (JS) -
+ *
+ * JS was first invented as a web language to make HTML and CSS dynamic and cool. Since then, it has become
  * one of the most popular languages in the world, used as the basis for front-ends, back-ends, middleware, etc.
- * 
- * Here, I'll briefly review the fundamentals of JS. If you're already familiar with the language, you can probably 
+ *
+ * Here, I'll briefly review the fundamentals of JS. If you're already familiar with the language, you can probably
  * skip this.
  */
 
 // -- Variables --
-// In JS there are two types of variables, constants and non-constants. 
+// In JS there are two types of variables, constants and non-constants.
 
 // For constants, you can only set their value once. After that, no more assignment can occur.
 // Setting a constant looks like this:
 const constant = 1
 
-// Non-constants are what you usually think of regarding programming variables. You're free to set values as many times 
+// Non-constants are what you usually think of regarding programming variables. You're free to set values as many times
 // and perform whatever operation you want on them.
 // Setting a non-constant variable looks like this:
 let nonConstant = 1
@@ -25,9 +25,9 @@ nonConstant = nonConstant + 2
 // Whereas this is invalid and gives a linter error
 constant = constant - 3
 
-/** -- Data Types -- 
+/** -- Data Types --
  * JS has several fundamental types.
- * 
+ *
  * Primitives:
  * - Undefined: A value used to demark nothing, similar to null and none in other languages
  * - String: A collection of characters wrapped by quotes
@@ -49,35 +49,40 @@ const SYMBOL = Symbol("Description of symbol unused in logic")
  * - Function: An object you can call to run code. JS treats functions as first class citizens, which means they're equivalent to any other object variable,
  *     and can be passed around as parameters and assigned to local variables
  * - Array: An ordered list of items, not limited by type. Think of the ArrayList from Java or a python list.
- * - Map: A collection of keys and values. There are major differences between a native object and a map data structure. 
- *     Map keys can be any type while object keys are limited to strings and symbols. Maps are also natively iterable whereas 
- *     objects are not (you can still iterate through an object with for...in or Object.keys()). Maps are overall faster, while objects 
+ * - Map: A collection of keys and values. There are major differences between a native object and a map data structure.
+ *     Map keys can be any type while object keys are limited to strings and symbols. Maps are also natively iterable whereas
+ *     objects are not (you can still iterate through an object with for...in or Object.keys()). Maps are overall faster, while objects
  *     are syntactically easier to use and write.
  * - Set: An iterable collection of unique objects. Duplicates cannot be added.
  */
 const OBJECT = { loves: "convergent", bestLead: "larry" }
-const FUNC = function (x) { return x + 10 }
-const ARRAY = [ 1, 2, "buckle my shoe" ]
-const MAP = new Map([ ["good schools", "UT Austin"], ["horrible, awful schools", "Texas A&M"] ])
-const SET = new Set([ "all", "unique", "things" ])
+const FUNC = function (x) {
+    return x + 10
+}
+const ARRAY = [1, 2, "buckle my shoe"]
+const MAP = new Map([
+    ["good schools", "UT Austin"],
+    ["horrible, awful schools", "Texas A&M"],
+])
+const SET = new Set(["all", "unique", "things"])
 
 /**
- * Notice when setting variables above, we didn't need to specify a data type. This is because JS is what's called a 
+ * Notice when setting variables above, we didn't need to specify a data type. This is because JS is what's called a
  * "dynamically-typed" and "weakly-typed" language. This encompasses two things:
- * 
- * "Dynamically typed" means that the compiler only type-checks at run-time. This essentially means that any written variable 
- * can hold any data type without having to specify its type. Checking for code correctness / compatibility regarding types 
+ *
+ * "Dynamically typed" means that the compiler only type-checks at run-time. This essentially means that any written variable
+ * can hold any data type without having to specify its type. Checking for code correctness / compatibility regarding types
  * only happens once the code is run.
- * 
- * "Weakly typed" relates to how types are implicitly converted between each other. In Javascript, this means that different 
- * data types can do operations on each other without fail. To see an example of this, let's look at an example comparing JS and 
+ *
+ * "Weakly typed" relates to how types are implicitly converted between each other. In Javascript, this means that different
+ * data types can do operations on each other without fail. To see an example of this, let's look at an example comparing JS and
  * Python, a dynamically typed and strongly typed language.
  */
 
-// This code returns "5fire" and throws no errors, despite a number and string performing  
+// This code returns "5fire" and throws no errors, despite a number and string performing
 let result = 5 + "fire"
 
-// Similar code in python returns an error, because python enforces the fact that you can't implicitly add a string and integer. You have 
+// Similar code in python returns an error, because python enforces the fact that you can't implicitly add a string and integer. You have
 // to explicitly state that you intend to concatenate the two.
 // result = 5 + "fire"
 // Returns -> TypeError: unsupported operand type(s) for +: 'int' and 'str'
@@ -89,7 +94,7 @@ result = undefined + true
 // result = None + True
 // Returns -> TypeError: unsupported operand type(s) for +: 'NoneType' and 'bool'
 
-// Overall, JS's typing is a double edged sword. Some see it as a reason to hate JS while others see it as a feature. 
+// Overall, JS's typing is a double edged sword. Some see it as a reason to hate JS while others see it as a feature.
 
 // -- Operators --
 // JS has the basic operators you'd expect in any programming language.
@@ -108,8 +113,8 @@ x = 3 % 2 // Returns the remainder of a division operation. Here, this returns 1
 x = 1 + 3 == "4" // returns true
 x = 1 + 3 === "4" // returns false
 // The '==' is a "weak equals" operation, where JS implicitly converts types such that both operands are comparable to each other.
-// Whereas the '===' is a "strong equals" op eration, requiring both operands to be the same data type to be compared. 
-// Usually, go for '===' as that will cause less pain in the future. 
+// Whereas the '===' is a "strong equals" op eration, requiring both operands to be the same data type to be compared.
+// Usually, go for '===' as that will cause less pain in the future.
 // This weak vs strong typing applies to the "not equal" operation as well
 x = 4 + 5 != "9"
 x = 4 + 5 !== "9"
@@ -119,7 +124,7 @@ x = x > 10 // less than
 x = x <= 10 // greater than or equal
 x = x >= 10 // less than or equal
 // And there's the not operation, for flipping a boolean
-x = !("hi".length === 2) 
+x = !("hi".length === 2)
 // This also applies to non-booleans, and it is useful for boolean conversions
 x = !1 // returns false
 x = !0 // returns true
@@ -128,7 +133,7 @@ x = !!null // returns false
 
 /**
  * Control Flow
- * 
+ *
  * JS has all the usual control flow structures you'll find in other languages.
  */
 
@@ -145,25 +150,25 @@ if ("texas" === "good") {
 
 // switch statement
 
-// If you have to test whether a value can equal multiple options, you could use a large if-elseif-else statement or you 
+// If you have to test whether a value can equal multiple options, you could use a large if-elseif-else statement or you
 // can use a switch statement for neater code.
 const city = "Austin"
 switch (city) {
-    case "Dallas": 
+    case "Dallas":
         console.log("This is a decent Texas city.")
         break // JS switches are fall-through, meaning you have to explicitly break to get out of the switch early
     case "Houston":
         console.log("This is a diverse city.")
         break
-    case "Austin": 
+    case "Austin":
         console.log("This is a great city.")
         break
-    case "Lubbock": 
+    case "Lubbock":
         console.log("What are you doing??") // No break here, the temple case runs
-    case "Temple": 
+    case "Temple":
         console.log("Terrible city, don't even go here.")
         break
-    case "El Paso": 
+    case "El Paso":
         console.log("This city is in a different time zone!")
         break
     default:
@@ -175,17 +180,14 @@ switch (city) {
 
 // for loop
 // JS has a couple of types of for loops. We have the traditional type
-for (let i = 0; i < 10; i++) 
-    console.log(i) // prints 0...9
+for (let i = 0; i < 10; i++) console.log(i) // prints 0...9
 
 // and we have two foreach loops
 
 // for...in - loops over object keys. don't use for iterables
 const loopedObj = { a: 1, b: 2, c: 3 }
-for (const key in loopedObj) 
-    console.log(key + " " + loopedObj[key]) // prints a 1, b 2, c 3
+for (const key in loopedObj) console.log(key + " " + loopedObj[key]) // prints a 1, b 2, c 3
 
 // for...of - loops over iterable objects. use for arrays and maps and sets
 const arr = [1, 2, 3, 4, 5]
-for (const num of arr) 
-    console.log(num) // prints 1 2 3 4 5
+for (const num of arr) console.log(num) // prints 1 2 3 4 5
